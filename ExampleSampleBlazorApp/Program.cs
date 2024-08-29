@@ -1,7 +1,6 @@
 using ExampleSampleBlazorApp._3rdParty;
 using ExampleSampleBlazorApp.Services;
 using ExampleSampleBlazorApp.Services._3rdParty;
-using ExampleSampleBlazorApp.Services.Core;
 using Microsoft.OpenApi.Models;
 using Refit;
 using System.Reflection;
@@ -31,8 +30,7 @@ namespace ExampleSampleBlazorApp
                 .AllowAnyMethod());
             });
 
-            //  Create and Configure our HTTP client we'll use to call our API from the Razor page
-            builder.Services.AddScoped<IHttpClientServiceImplementation, HttpClientServiceFactory>();
+            //  Create and Configure our HTTP client we'll use to call our API from the Razor page            
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
 
             // This should be done via the appsettings.json file
